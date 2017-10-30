@@ -4,6 +4,7 @@
         "chalk": "^2.3.0",
         "glob": "^7.1.2",
         "minimist": "^1.2",
+        "pretty-bytes": "^4.0.2",
         "replace-ext": "^1.0.0",
         "svg.js": "^2.6.3",
         "svgdom": "^0.0.15",
