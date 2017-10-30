@@ -3,6 +3,7 @@
     "version": "0.0.1",
     "dependencies": {
         "chalk": "^2.3.0",
+        "command-line-usage": "^4.0.1",
         "glob": "^7.1.2",
         "minimist": "^1.2",
         "pretty-bytes": "^4.0.2",
