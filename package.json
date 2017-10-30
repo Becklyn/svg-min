@@ -1,6 +1,6 @@
 {
     "name": "@becklyn/svg-min",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "dependencies": {
         "chalk": "^2.3.0",
         "command-line-usage": "^4.0.1",
