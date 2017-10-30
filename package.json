@@ -1,0 +1,13 @@
+{
+    "name": "@becklyn/svg-min",
+    "dependencies": {
+        "chalk": "^2.3.0",
+        "glob": "^7.1.2",
+        "minimist": "^1.2",
+        "replace-ext": "^1.0.0",
+        "svg.js": "^2.6.3",
+        "svgdom": "^0.0.15",
+        "svgo": "svg/svgo#999cfbd97c37e2b1de3b2ccc26f5498daf6e2fc8",
+        "xml2js": "^0.4.19"
+    }
+}
