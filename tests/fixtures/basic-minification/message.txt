@@ -1,0 +1,1 @@
+Simplification: inlining of transform, rebasing the viewbox and removing attributes.

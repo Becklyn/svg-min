@@ -1,40 +1,55 @@
 import SvgFile from "./lib/SvgFile";
+import fs from "fs";
 import glob from "glob";
 import path from "path";
 import test from "ava";
+import {promisify} from "util";
 
 
 const FIXTURES_DIR = `${__dirname}/tests/fixtures`;
 
-const files = glob.sync(
-    `${FIXTURES_DIR}/**.js`,
+const directories = glob.sync(
+    `${FIXTURES_DIR}/*/`,
     {
-        nodir: true,
         absolute: true,
     }
 );
 
-files.forEach(file => runTest(file));
-
+directories.forEach(dir => runTest(dir));
+const readFile = promisify(fs.readFile);
 
 
 /**
  * Registers a single test
  *
- * @param {string} filePath
+ * @param {string} dir
  */
-function runTest(filePath)
+function runTest(dir)
 {
     test(
-        `Test Case: ${path.relative(FIXTURES_DIR, filePath)}`,
-        async (assert) =>
+        `Test Case: ${path.basename(dir)}`,
+        (assert) =>
         {
-            /** @type {{in: string, out: string, ?message: string}} data */
-            const data = require(filePath);
-            const message = data.message !== undefined ? data.message : null;
+            const inputPath = `${dir}/in.svg`;
 
-            const svg = new SvgFile(filePath, data.in);
-            assert.is((await svg.minify()).data, data.out, message);
+            return Promise.all([
+                readFile(inputPath),
+                readFile(`${dir}/out.svg`),
+                readFile(`${dir}/message.txt`),
+            ])
+            .then(
+                async (data) =>
+                {
+                    const input = data[0].toString();
+                    // trim output content, so that trailing slashes don't matter
+                    const output = data[1].toString().trim();
+                    const message = data[2].toString();
+
+                    const svg = new SvgFile(inputPath, input);
+                    assert.is((await svg.minify()).data, output, message);
+                },
+                (err) => t.fail(err)
+            );
         }
     );
 }
