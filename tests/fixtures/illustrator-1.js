@@ -11,5 +11,5 @@ module.exports = {
 	-1483.2,2497.2 -1490.5,2504.6 -1497.8,2497.2 "/>
 </svg>
 `,
-    out: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1499.4 2495.7 16.1 8.8"><path fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M-1484 2496.5l-7.3 7.4-7.3-7.4"/></svg>`,
+    out: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.1 8.8"><path fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M14.6 0L7.3 7.4 0 0"/></svg>`,
 };
