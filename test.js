@@ -34,8 +34,7 @@ function runTest(filePath)
             const message = data.message !== undefined ? data.message : null;
 
             const svg = new SvgFile(filePath, data.in);
-            // output is trimmed, so that one can format it more comfortable
-            assert.is((await svg.minify()).data, data.out.trim(), message);
+            assert.is((await svg.minify()).data, data.out, message);
         }
     );
 }
