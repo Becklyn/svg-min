@@ -29,12 +29,13 @@ function runTest(filePath)
         `Test Case: ${path.relative(FIXTURES_DIR, filePath)}`,
         async (assert) =>
         {
-            /** @type {{in: string, out: string}} data */
+            /** @type {{in: string, out: string, ?message: string}} data */
             const data = require(filePath);
+            const message = data.message !== undefined ? data.message : null;
 
             const svg = new SvgFile(filePath, data.in);
             // output is trimmed, so that one can format it more comfortable
-            assert.is((await svg.minify()).data, data.out.trim());
+            assert.is((await svg.minify()).data, data.out.trim(), message);
         }
     );
 }
