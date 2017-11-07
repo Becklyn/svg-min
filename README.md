@@ -48,3 +48,24 @@ The implementation is pretty rudimentary and a lot of SVG features are not suppo
 
 * The script will bail if any `transform` except `translate` is used.
 * The cropping of the artboard might fail.  
+
+
+Testing
+-------
+
+The test runner works with `ava`.
+Just add your test case in `tests/fixtures/` with a descriptive name as `js` file:
+
+
+```js
+module.exports = {
+    message: "This is a message describing the test case",
+    in: "<svg ...>...</svg>",    
+    out: "<svg ...>...</svg>",
+};
+```
+
+`message` is optional.
+
+
+Run the tests with `npm test`.
