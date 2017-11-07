@@ -33,7 +33,8 @@ function runTest(filePath)
             const data = require(filePath);
 
             const svg = new SvgFile(filePath, data.in);
-            assert.is((await svg.minify()).data, data.out);
+            // output is trimmed, so that one can format it more comfortable
+            assert.is((await svg.minify()).data, data.out.trim());
         }
     );
 }
