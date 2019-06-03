@@ -2,14 +2,14 @@
     "name": "@becklyn/svg-min",
     "version": "0.0.2",
     "dependencies": {
-        "chalk": "^2.3.0",
-        "command-line-usage": "^4.0.1",
+        "command-line-usage": "^5.0.5",
         "glob": "^7.1.2",
+        "kleur": "^3.0.3",
         "minimist": "^1.2",
-        "pretty-bytes": "^4.0.2",
+        "pretty-bytes": "^5.2.0",
         "replace-ext": "^1.0.0",
         "svg.js": "^2.6.3",
-        "svgdom": "^0.0.15",
+        "svgdom": "0.0.20",
         "svgo": "svg/svgo#999cfbd97c37e2b1de3b2ccc26f5498daf6e2fc8",
         "xml2js": "^0.4.19"
     },
@@ -20,6 +20,14 @@
         "test": "ava"
     },
     "devDependencies": {
-        "ava": "^0.23.0"
+        "ava": "^2.0.0"
+    },
+    "ava": {
+        "files": [
+            "test.js"
+        ],
+        "require": [
+            "esm"
+        ]
     }
 }
