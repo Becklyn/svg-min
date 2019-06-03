@@ -2,9 +2,9 @@
     "name": "@becklyn/svg-min",
     "version": "0.0.2",
     "dependencies": {
-        "chalk": "^2.3.0",
         "command-line-usage": "^4.0.1",
         "glob": "^7.1.2",
+        "kleur": "^3.0.3",
         "minimist": "^1.2",
         "pretty-bytes": "^4.0.2",
         "replace-ext": "^1.0.0",
