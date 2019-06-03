@@ -21,5 +21,13 @@
     },
     "devDependencies": {
         "ava": "^2.0.0"
+    },
+    "ava": {
+        "files": [
+            "test.js"
+        ],
+        "require": [
+            "esm"
+        ]
     }
 }
